@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
 import { MARKDOWN_VAULT_BUNDLE_TYPE, runBundleMarkdownVaultCarriers } from "../scripts/bundle-markdown-vault-carriers.mjs";
-import { get } from "@red-cup-engineering/semiotic-eavt-services-section/store";
+import { get } from "@red-cup-engineering/semiotic-eavt-engineering-services-section/store";
 import { sha256Digest } from "@red-cup-engineering/cryptographic-computer-data-engineering-services-section/integrity";
 
 async function buildFixture(root) {
