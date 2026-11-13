@@ -1,5 +1,5 @@
 {
-  "name": "@red-cup-engineering/markdown-vault-bundle-services-section",
+  "name": "@red-cup-engineering/markdown-vault-bundle-engineering-services-section",
   "version": "0.1.4",
   "type": "module",
   "description": "Concatenates a Markdown vault subtree's admitted carriers into a small number of deterministic aggregate Markdown files, sized and capped for bulk ingestion (e.g. Google Gemini Notebook).",

@@ -6,7 +6,7 @@
 
 ```js
 import { runBundleMarkdownVaultCarriers } from
-  '@red-cup-engineering/markdown-vault-bundle-services-section/bundle-markdown-vault-carriers';
+  '@red-cup-engineering/markdown-vault-bundle-engineering-services-section/bundle-markdown-vault-carriers';
 
 const result = await runBundleMarkdownVaultCarriers({
   root: './vault',
