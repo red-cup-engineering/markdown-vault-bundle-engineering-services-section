@@ -40,7 +40,7 @@ export function isMarkdownVaultBundleStaging(path) {
   return ARCHIVE_CARRIER.test(path) || LEGACY_SEGMENT.test(path) || TRIAGE_SEGMENT.test(path);
 }
 
-function isAdmitted(path, roles) {
+function isValidated(path, roles) {
   const role = roleOfMarkdownVaultCarrier(path);
   if (role === null || !roles.includes(role)) return false;
   return !isMarkdownVaultBundleStaging(path);
@@ -67,7 +67,7 @@ export async function selectMarkdownVaultCarriers({
     root,
     excludes,
     extensions: [".md", ".markdown"],
-    includeFile: (file) => isMarkdownPath(file.path) && isAdmitted(file.path, roles),
+    includeFile: (file) => isMarkdownPath(file.path) && isValidated(file.path, roles),
     maxEntries: maxScan,
   });
   if (walk.truncated) throw new Error(`markdown vault bundle: scan truncated at maxScan=${maxScan}; raise maxScan`);

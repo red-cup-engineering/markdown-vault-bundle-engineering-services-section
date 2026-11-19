@@ -52,7 +52,7 @@ export async function runBundleMarkdownVaultCarriers({
   wordBudget,
   maxFiles,
   rootLabel,
-  journalRoot = NODE_ROOT,
+  journalRoot: logRoot = NODE_ROOT,
   recordedAt = new Date().toISOString(),
 } = {}) {
   if (typeof root !== "string" || root === "") throw new TypeError("root is required");
@@ -72,7 +72,7 @@ export async function runBundleMarkdownVaultCarriers({
   }
   const manifestText = `${JSON.stringify(bundle.manifest, null, 2)}\n`;
   await writeFile(join(resolvedOutput, "manifest.json"), manifestText, "utf8");
-  const receipt = { id: put(journalRoot, MARKDOWN_VAULT_BUNDLE_TYPE, {
+  const record = { id: put(logRoot, MARKDOWN_VAULT_BUNDLE_TYPE, {
       recordedAt,
       root: resolvedRoot,
       output: resolvedOutput,
@@ -86,7 +86,7 @@ export async function runBundleMarkdownVaultCarriers({
       defects: bundle.defects,
       manifestDigest: sha256Digest(manifestText),
     }) };
-  return { output: resolvedOutput, manifest: bundle.manifest, receipt, defects: bundle.defects };
+  return { output: resolvedOutput, manifest: bundle.manifest, receipt: record, defects: bundle.defects };
 }
 
 export const command = Object.freeze({
