@@ -1,5 +1,5 @@
+import { sha256Digest } from "@red-cup-engineering/semiotic-content-address-system";
 import { readMarkdownFrontmatter } from "@red-cup-engineering/markdown-engineering-services-section/read-markdown-frontmatter";
-import { sha256Digest } from "@red-cup-engineering/cryptographic-computer-data-engineering-services-section/integrity";
 
 import { decodeReferencesValue } from "@red-cup-engineering/csl-json-engineering-services-section/csl-references";
 import { formatAuthorsFull } from "@red-cup-engineering/csl-json-engineering-services-section/record-formatting";

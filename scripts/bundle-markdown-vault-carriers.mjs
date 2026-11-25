@@ -1,10 +1,10 @@
+import { sha256Digest, sha256Hex } from "@red-cup-engineering/semiotic-content-address-system";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { put } from "@red-cup-engineering/semiotic-eavt-engineering-services-section/store";
 import { bundleMarkdownVaultCarriers } from "../src/bundle-markdown-vault-carriers.mjs";
 import { MARKDOWN_VAULT_BUNDLE_ROLES } from "../src/select-markdown-vault-carriers.mjs";
-import { sha256Digest, sha256Hex } from "@red-cup-engineering/cryptographic-computer-data-engineering-services-section/integrity";
 
 /** This package's own root; the default store custody root (records land at data/records/, per house data-custody law). */
 export const NODE_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
